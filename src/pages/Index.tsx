@@ -1,16 +1,40 @@
 
-import { Mail, Phone, Linkedin, Github, Calendar, MapPin, ExternalLink, Download, Code, Brain, Database, Zap } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Calendar, MapPin, ExternalLink, Download, Code, Brain, Database, Zap, Menu, X, Moon, Sun } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
 
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentRole, setCurrentRole] = useState(0);
+
+  const roles = [
+    "Student at IISER Bhopal",
+    "Data Science Engineer", 
+    "Data Analyst",
+    "ML Engineer"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle('dark');
+  };
+
   const technicalSkills = {
     languages: ['Python', 'C', 'SQL', 'HTML', 'CSS', 'Mathematica', 'JavaScript', 'MATLAB'],
     softwareTools: ['LaTeX', 'Excel', 'GitHub', 'Google Colab', 'Jupyter', 'VS Code', 'PyCharm', 'Linux'],
     pythonLibraries: ['TensorFlow', 'Scikit-Learn', 'PyTorch', 'NumPy', 'Pandas', 'SciPy', 'Matplotlib', 'Flask', 'Streamlit'],
     mathML: ['Linear Algebra', 'Probability', 'Statistics', 'Calculus and Optimization'],
-    dataScience: ['Python', 'Data Visualization', 'Supervised/Unsupervised Learning', 'ANN', 'CNN', 'RNN-LSTM', 'GANs', 'Transformers', 'Feature Engineering', 'Feature Selection and extraction etc.']
+    dataScience: ['Python', 'Data Visualization', 'Supervised/Unsupervised Learning', 'ANN', 'CNN', 'RNN-LSTM', 'GANs', 'Transformers']
   };
 
   const experiences = [
@@ -19,11 +43,10 @@ const Index = () => {
       company: "Advanced Signal and Image Processing Lab, IISER Bhopal",
       period: "January 2025 – Present",
       achievements: [
-        "Proposed a deep learning framework for Near-Infrared (NIR) to RGB image colorization, enhancing visibility and realism in low-light and night-time scenes.",
-        "Developed an enhanced GAN-based architecture extending ColorMamba, incorporating Visual State Space Blocks (VSSBs) and an HSV-based sub-network to capture fine-grained spatial-semantic dependencies.",
-        "Designed a novel multi-objective loss function combining VGG perceptual loss, histogram loss, and cosine loss, improving texture realism and perceptual sharpness.",
-        "Achieved PSNR: 24.418, SSIM: 0.71 on VCIP2020, outperforming baselines in fidelity and detail reconstruction with full pipeline optimized using patch-wise adaptive inference and mixed precision training.",
-        "Evaluated on four public datasets (VCIP2020, RGB2NIR Scene, OMSIV, FANVID), demonstrating robustness across varied lighting and scene."
+        "Proposed a deep learning framework for Near-Infrared (NIR) to RGB image colorization",
+        "Developed an enhanced GAN-based architecture extending ColorMamba",
+        "Achieved PSNR: 24.418, SSIM: 0.71 on VCIP2020 dataset",
+        "Evaluated on four public datasets demonstrating robustness across varied lighting"
       ]
     }
   ];
@@ -31,115 +54,168 @@ const Index = () => {
   const projects = [
     {
       title: "Text Classification and POS Tagging System",
-      tech: "Python, Scikit-Learn, PyTorch, NLTK, NumPy",
+      tech: "Python, Scikit-Learn, PyTorch, NLTK",
       period: "Sept 2024 – Nov 2024",
-      points: [
-        "Developed a feature extraction pipeline using regex and n-grams for emotion classification, training and evaluating multiple ML models (Naive Bayes, Logistic Regression, Random Forest, SVM) with Scikit-Learn.",
-        "Implemented deep learning models (FFNN, RNN, LSTM) with custom Word2Vec embeddings and fine-tuned transformer models (BERT, RoBERTa) for emotion classification in PyTorch.",
-        "Implemented the Viterbi algorithm with Hidden Markov Models for POS tagging, dynamically adjusting emission probabilities to improve accuracy on nosy datasets using NumPy."
-      ],
-      github: "GitHub"
+      description: "Developed feature extraction pipeline using regex and n-grams for emotion classification"
     },
     {
-      title: "Multi-Domain Recommendation System",
+      title: "Multi-Domain Recommendation System", 
       tech: "Python, Pandas, Scikit-Learn, NLTK",
       period: "May 2023 – July 2023",
-      points: [
-        "Designed and built a multi-domain recommender system across books, music, and movies by preprocessing metadata, cleaning features, and serializing ratings/tags for efficient retrieval.",
-        "Implemented hybrid algorithms: popularity and collaborative filtering (cosine similarity) for books, and content-based filtering using tag vectorization for music and movies.",
-        "Deployed the Flask-based book recommender, while preparing music/movie modules for deployment using pickle-serialized similarity scores and real-time metadata querying."
-      ]
+      description: "Built recommender system across books, music, and movies using hybrid algorithms"
     },
     {
       title: "Real Estate Cost Prognostication",
-      tech: "Python, Scikit-Learn, Pandas, Matplotlib, NumPy",
-      period: "Sept 2023 – Nov 2023",
-      points: [
-        "Developed flat price prediction models using ensemble and neural networks; achieved R² = 0.71, RMSE = 35.5 via optimized feature engineering and hyperparameter tuning.",
-        "Enhanced generalization by integrating categorical and numerical features through scaling, encoding, and dimensionality reduction."
-      ]
+      tech: "Python, Scikit-Learn, Pandas, Matplotlib",
+      period: "Sept 2023 – Nov 2023", 
+      description: "Developed flat price prediction models achieving R² = 0.71, RMSE = 35.5"
     }
   ];
 
-  const education = {
-    institution: "Indian Institute of Science Education and Research Bhopal",
-    degree: "Bachelor of Science in Data Science and Engineering",
-    period: "Aug 2021 – May 2025",
-    location: "Bhopal, M.P",
-    courses: [
-      "Artificial Intelligence (AI)", "Machine Learning (ML)", "Deep Learning", "Natural Language Processing (NLP)",
-      "Computer Vision (CV)", "Applied Accelerated Artificial Intelligence", "Data Structures and Algorithms (DSA)",
-      "Database Management Systems (DBMS)", "Programming in C", "Discrete Mathematics", "Linear Algebra",
-      "Probability and Statistics", "Calculus", "Group Theory", "Econometrics"
-    ]
-  };
-
-  const skillCategories = [
-    { title: "Languages", items: technicalSkills.languages, icon: Code, color: "from-blue-500 to-cyan-500" },
-    { title: "Software & Tools", items: technicalSkills.softwareTools, icon: Zap, color: "from-emerald-500 to-teal-500" },
-    { title: "Python Libraries", items: technicalSkills.pythonLibraries, icon: Brain, color: "from-purple-500 to-pink-500" },
-    { title: "Mathematics for ML/DL", items: technicalSkills.mathML, icon: Database, color: "from-orange-500 to-red-500" },
-    { title: "Data Science & ML", items: technicalSkills.dataScience, icon: Brain, color: "from-indigo-500 to-purple-500" }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      {/* Floating Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'dark bg-gray-900' : 'bg-white'}`}>
+      {/* Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isDark ? 'bg-gray-900/95' : 'bg-white/95'} backdrop-blur-md border-b border-gray-200/20`}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <div className="text-2xl font-bold text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Abhinav
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              <a href="#home" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Home</a>
+              <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Skills</a>
+              <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">Projects</a>
+              <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">About</a>
+              
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+              
+              <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200/20">
+            <div className="px-6 py-4 space-y-4">
+              <a href="#home" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Home</a>
+              <a href="#skills" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Skills</a>
+              <a href="#projects" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Projects</a>
+              <a href="#about" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">About</a>
+            </div>
+          </div>
+        )}
+      </nav>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-left space-y-6 animate-fade-in">
-              <div className="space-y-4">
-                <h1 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight">
-                  Abhinav Attri
-                </h1>
-                <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                <p className="text-2xl text-gray-600 font-light">Data Scientist & ML Engineer</p>
-                <p className="text-lg text-gray-500 max-w-lg leading-relaxed">
-                  Transforming complex data into intelligent solutions through cutting-edge machine learning and deep learning technologies.
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap gap-4">
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Resume
-                </Button>
-                <Button variant="outline" className="border-2 border-gray-300 hover:border-blue-500 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Get In Touch
-                </Button>
+      <section id="home" className="pt-20 min-h-screen flex items-center relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Column - Content */}
+          <div className="space-y-8">
+            {/* Social Icons */}
+            <div className="flex items-center space-x-6">
+              <div className="flex flex-col space-y-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-full">
+                <a href="https://www.linkedin.com/in/abhinav-attri-8580i/" className="p-2 hover:text-blue-600 transition-colors relative group">
+                  <Linkedin className="w-5 h-5" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-ping group-hover:animate-none"></div>
+                </a>
+                <a href="https://github.com/Abhinav2158" className="p-2 hover:text-purple-600 transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="mailto:abhinav8580i@gmail.com" className="p-2 hover:text-red-600 transition-colors">
+                  <Mail className="w-5 h-5" />
+                </a>
               </div>
 
-              <div className="flex flex-wrap gap-6 pt-4">
-                <a href="tel:+918262995011" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>+91 82629-95011</span>
-                </a>
-                <a href="mailto:abhinav@gmail.com" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                  <Mail className="w-4 h-4" />
-                  <span>abhinav@gmail.com</span>
-                </a>
-                <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                  <Linkedin className="w-4 h-4" />
-                  <span>LinkedIn</span>
-                </a>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">Hello, I Am</p>
+                  <h1 className="text-5xl lg:text-6xl font-bold">
+                    <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+                      Abhinav Attri
+                    </span>
+                  </h1>
+                  <div className="h-16 flex items-center">
+                    <span className="text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {roles[currentRole]}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
+                  As a 3rd year Data Science Engineer at IISER Bhopal, I'm ready to tackle real-world challenges with powerful tools and a curious mind. Excited to use my skills to make a difference.
+                </p>
+
+                <div className="flex space-x-4 pt-4">
+                  <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 px-8 py-3 text-lg">
+                    Hire Me
+                  </Button>
+                  <Button variant="outline" className="px-8 py-3 text-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <Download className="w-5 h-5 mr-2" />
+                    Download CV
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="relative flex justify-center lg:justify-end">
+            {/* Animated Circle Background */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full animate-spin-slow"></div>
+            </div>
+            
+            {/* Profile Image */}
+            <div className="relative z-10 w-80 h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+              <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-6xl font-bold">
+                AA
               </div>
             </div>
 
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-                <div className="absolute inset-2 bg-gradient-to-br from-slate-100 to-white rounded-full shadow-xl">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="text-6xl font-bold text-gray-400">AA</div>
-                  </div>
+            {/* Floating Cards */}
+            <div className="absolute -left-8 top-1/4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg animate-float">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                  <Code className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <p className="font-semibold">50+ Projects</p>
+                  <p className="text-sm text-gray-500">Completed</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -right-8 bottom-1/4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg animate-float delay-1000">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
+                  <Brain className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <p className="font-semibold">2+ Years</p>
+                  <p className="text-sm text-gray-500">Experience</p>
                 </div>
               </div>
             </div>
@@ -147,122 +223,100 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Technical Skills Section */}
-      <section className="py-20 px-4 relative">
-        <div className="max-w-6xl mx-auto">
+      {/* Skills Section */}
+      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Expertise</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600">Proficient in cutting-edge technologies and frameworks</p>
+            <h2 className="text-4xl font-bold mb-4">Technical Expertise</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Proficient in cutting-edge technologies</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, index) => (
-              <Card key={category.title} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color} shadow-lg`}>
-                      <category.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg text-gray-900">{category.title}</CardTitle>
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl text-white">
+                    <Code className="w-6 h-6" />
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.items.map((skill) => (
-                      <Badge 
-                        key={skill} 
-                        variant="secondary" 
-                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-200 hover:scale-105"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
-          </div>
-
-          {experiences.map((exp, index) => (
-            <Card key={index} className="mb-8 hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-lg">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-2xl text-gray-900 mb-2">{exp.title}</CardTitle>
-                    <p className="text-lg text-blue-600 font-semibold">{exp.company}</p>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600 bg-white px-4 py-2 rounded-full shadow-md">
-                    <Calendar className="w-4 h-4" />
-                    <span className="font-medium">{exp.period}</span>
-                  </div>
-                </div>
+                  Languages
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
-                <ul className="space-y-4">
-                  {exp.achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex gap-4 group">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
-                      <span className="text-gray-700 leading-relaxed">{achievement}</span>
-                    </li>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {technicalSkills.languages.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="hover:scale-105 transition-transform">
+                      {skill}
+                    </Badge>
                   ))}
-                </ul>
+                </div>
               </CardContent>
             </Card>
-          ))}
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl text-white">
+                    <Zap className="w-6 h-6" />
+                  </div>
+                  Tools & Software
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {technicalSkills.softwareTools.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="hover:scale-105 transition-transform">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white">
+                    <Brain className="w-6 h-6" />
+                  </div>
+                  Python Libraries
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {technicalSkills.pythonLibraries.slice(0, 6).map((skill) => (
+                    <Badge key={skill} variant="secondary" className="hover:scale-105 transition-transform">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section id="projects" className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600">Innovative solutions and research implementations</p>
+            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Innovative solutions and implementations</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex-1">
-                      <CardTitle className="text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                        {project.title}
-                      </CardTitle>
-                      <p className="text-blue-600 font-medium text-sm">{project.tech}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-gray-500 text-sm">{project.period}</span>
-                      {project.github && (
-                        <Button variant="outline" size="sm" className="hover:bg-blue-50 hover:border-blue-300">
-                          <Github className="w-4 h-4 mr-1" />
-                          {project.github}
-                        </Button>
-                      )}
-                    </div>
-                  </div>
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader>
+                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <p className="text-blue-600 font-medium text-sm">{project.tech}</p>
+                  <p className="text-gray-500 text-sm">{project.period}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
-                    {project.points.map((point, idx) => (
-                      <li key={idx} className="flex gap-3 group">
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
-                        <span className="text-gray-700 text-sm leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -270,70 +324,80 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Education</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
+            <h2 className="text-4xl font-bold mb-4">About Me</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
           </div>
 
-          <Card className="hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-lg">
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-2xl text-gray-900 mb-2">{education.institution}</CardTitle>
-                  <p className="text-lg text-blue-600 font-semibold">{education.degree}</p>
-                </div>
-                <div className="text-right">
-                  <div className="flex items-center gap-2 text-gray-600 mb-2 bg-white px-4 py-2 rounded-full shadow-md">
-                    <Calendar className="w-4 h-4" />
-                    <span className="font-medium">{education.period}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600 bg-white px-4 py-2 rounded-full shadow-md">
-                    <MapPin className="w-4 h-4" />
-                    <span className="font-medium">{education.location}</span>
-                  </div>
-                </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+              Numbers and data tell stories, and I learn how to read them at IISER Bhopal. My journey 
+              fuels my passion for understanding data through Computer Vision, Machine Learning, and 
+              deep learning. I'm learning about data science, which is all about understanding information
+              and solving problems with it. I'm curious about AI because it can learn and do cool things,
+              and I want to help make sure it's used in good ways.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
               </div>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <h4 className="font-semibold text-gray-900 mb-4 text-lg">Key Courses</h4>
-              <div className="flex flex-wrap gap-3">
-                {education.courses.map((course) => (
-                  <Badge 
-                    key={course} 
-                    variant="outline" 
-                    className="bg-gray-50 hover:bg-blue-50 hover:border-blue-300 transition-colors duration-200 hover:scale-105 px-3 py-1"
-                  >
-                    {course}
-                  </Badge>
-                ))}
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">2+</div>
+                <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+                <p className="text-gray-600 dark:text-gray-400">Technologies</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-        <div className="max-w-6xl mx-auto text-center">
+      <footer className="py-12 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/abhinav-attri-8580i/" className="text-gray-400 hover:text-white transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/Abhinav2158" className="text-gray-400 hover:text-white transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="mailto:abhinav@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+            <a href="mailto:abhinav8580i@gmail.com" className="text-gray-400 hover:text-white transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
           <p className="text-gray-400">
-            © 2025 Abhinav Attri. Crafted with passion for data science and machine learning innovation.
+            © 2025 Abhinav Attri. Crafted with passion for data science and machine learning.
           </p>
         </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        .delay-1000 {
+          animation-delay: 1s;
+        }
+      `}</style>
     </div>
   );
 };
