@@ -12,10 +12,9 @@ const Index = () => {
   const [currentRole, setCurrentRole] = useState(0);
 
   const roles = [
-    "Student at IISER Bhopal",
     "Data Science Engineer", 
     "Data Analyst",
-    "ML Engineer"
+    "AI Engineer"
   ];
 
   useEffect(() => {
@@ -141,7 +140,7 @@ const Index = () => {
                 </div>
 
                 <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
-                  As a 3rd year Data Science Engineer at IISER Bhopal, I'm ready to tackle real-world challenges with powerful tools and a curious mind. Excited to use my skills to make a difference.
+                  As a 4th year Data Science Engineer at IISER Bhopal, I'm ready to tackle real-world challenges with powerful tools and a curious mind. Excited to use my skills to make a difference.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
