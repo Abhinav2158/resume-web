@@ -52,7 +52,7 @@ const Contact = () => {
   const availability = [
     {
       type: "Full-time Opportunities",
-      status: "Available from 2027",
+      status: "Available",
       description: "Open to full-time positions after graduation"
     },
     {
