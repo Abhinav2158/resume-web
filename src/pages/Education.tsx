@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom';
 const Education = () => {
   const education = [
     {
-      degree: "BS-MS Data Science and Engineering",
+      degree: "BS, Data Science and Engineering",
       institution: "Indian Institute of Science Education and Research, Bhopal",
-      period: "2022 - 2027",
+      period: "2021 - 2025",
       location: "Bhopal, Madhya Pradesh",
       description: "Pursuing an integrated BS-MS program in Data Science and Engineering with focus on machine learning, artificial intelligence, and computational methods.",
       highlights: [
-        "Current Year: 3rd Year",
+        "Current Year: Graduated",
         "Focus Areas: Machine Learning, Computer Vision, Deep Learning",
-        "Research Experience in Signal Processing"
+        "Research Experience in ASIP Lab , DSE Department"
       ]
     }
   ];
