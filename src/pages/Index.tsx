@@ -1,5 +1,5 @@
 
-import { Mail, Phone, Linkedin, Github, Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Calendar, MapPin, ExternalLink, Download, Code, Brain, Database, Zap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -74,33 +74,73 @@ const Index = () => {
     ]
   };
 
+  const skillCategories = [
+    { title: "Languages", items: technicalSkills.languages, icon: Code, color: "from-blue-500 to-cyan-500" },
+    { title: "Software & Tools", items: technicalSkills.softwareTools, icon: Zap, color: "from-emerald-500 to-teal-500" },
+    { title: "Python Libraries", items: technicalSkills.pythonLibraries, icon: Brain, color: "from-purple-500 to-pink-500" },
+    { title: "Mathematics for ML/DL", items: technicalSkills.mathML, icon: Database, color: "from-orange-500 to-red-500" },
+    { title: "Data Science & ML", items: technicalSkills.dataScience, icon: Brain, color: "from-indigo-500 to-purple-500" }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Floating Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-8">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">Abhinav Attri</h1>
-            <p className="text-xl text-gray-600 mb-6">Data Scientist & Machine Learning Engineer</p>
-            <div className="flex flex-wrap justify-center gap-4 text-gray-600">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 82629-95011</span>
+      <section className="relative py-24 px-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left space-y-6 animate-fade-in">
+              <div className="space-y-4">
+                <h1 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight">
+                  Abhinav Attri
+                </h1>
+                <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                <p className="text-2xl text-gray-600 font-light">Data Scientist & ML Engineer</p>
+                <p className="text-lg text-gray-500 max-w-lg leading-relaxed">
+                  Transforming complex data into intelligent solutions through cutting-edge machine learning and deep learning technologies.
+                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <a href="mailto:abhinav@gmail.com" className="text-blue-600 hover:text-blue-800">
-                  abhinav@gmail.com
+              
+              <div className="flex flex-wrap gap-4">
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Resume
+                </Button>
+                <Button variant="outline" className="border-2 border-gray-300 hover:border-blue-500 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Get In Touch
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-6 pt-4">
+                <a href="tel:+918262995011" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <span>+91 82629-95011</span>
+                </a>
+                <a href="mailto:abhinav@gmail.com" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                  <Mail className="w-4 h-4" />
+                  <span>abhinav@gmail.com</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                  <span>LinkedIn</span>
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Linkedin className="w-4 h-4" />
-                <a href="#" className="text-blue-600 hover:text-blue-800">
-                  LinkedIn/Abhinav
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-blue-600">abhinav</span>
+            </div>
+
+            <div className="relative">
+              <div className="w-80 h-80 mx-auto relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+                <div className="absolute inset-2 bg-gradient-to-br from-slate-100 to-white rounded-full shadow-xl">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="text-6xl font-bold text-gray-400">AA</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -108,112 +148,72 @@ const Index = () => {
       </section>
 
       {/* Technical Skills Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4 relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Technical Skills</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg text-blue-700">Languages</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {technicalSkills.languages.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-800">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Expertise</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600">Proficient in cutting-edge technologies and frameworks</p>
+          </div>
 
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg text-green-700">Software & Tools</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {technicalSkills.softwareTools.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-green-100 text-green-800">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg text-purple-700">Python Libraries & Frameworks</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {technicalSkills.pythonLibraries.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-purple-100 text-purple-800">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg text-orange-700">Mathematics for DL and ML</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {technicalSkills.mathML.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-orange-100 text-orange-800">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300 md:col-span-2">
-              <CardHeader>
-                <CardTitle className="text-lg text-red-700">Data Science, ML, DL</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {technicalSkills.dataScience.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-red-100 text-red-800">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => (
+              <Card key={category.title} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color} shadow-lg`}>
+                      <category.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-lg text-gray-900">{category.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((skill) => (
+                      <Badge 
+                        key={skill} 
+                        variant="secondary" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-200 hover:scale-105"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Experience</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
+          </div>
+
           {experiences.map((exp, index) => (
-            <Card key={index} className="mb-6 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
+            <Card key={index} className="mb-8 hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-lg">
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle className="text-xl text-gray-900">{exp.title}</CardTitle>
-                    <p className="text-lg text-blue-600 font-medium">{exp.company}</p>
+                    <CardTitle className="text-2xl text-gray-900 mb-2">{exp.title}</CardTitle>
+                    <p className="text-lg text-blue-600 font-semibold">{exp.company}</p>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-gray-600 bg-white px-4 py-2 rounded-full shadow-md">
                     <Calendar className="w-4 h-4" />
-                    <span>{exp.period}</span>
+                    <span className="font-medium">{exp.period}</span>
                   </div>
                 </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="pt-6">
+                <ul className="space-y-4">
                   {exp.achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex gap-3">
-                      <span className="text-blue-500 mt-1">•</span>
-                      <span className="text-gray-700">{achievement}</span>
+                    <li key={idx} className="flex gap-4 group">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
+                      <span className="text-gray-700 leading-relaxed">{achievement}</span>
                     </li>
                   ))}
                 </ul>
@@ -224,22 +224,29 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Projects</h2>
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600">Innovative solutions and research implementations</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl text-gray-900">{project.title}</CardTitle>
-                      <p className="text-blue-600 font-medium">{project.tech}</p>
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex-1">
+                      <CardTitle className="text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <p className="text-blue-600 font-medium text-sm">{project.tech}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-600 text-sm">{project.period}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-gray-500 text-sm">{project.period}</span>
                       {project.github && (
-                        <Button variant="outline" size="sm" className="ml-2">
+                        <Button variant="outline" size="sm" className="hover:bg-blue-50 hover:border-blue-300">
                           <Github className="w-4 h-4 mr-1" />
                           {project.github}
                         </Button>
@@ -250,9 +257,9 @@ const Index = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     {project.points.map((point, idx) => (
-                      <li key={idx} className="flex gap-3">
-                        <span className="text-blue-500 mt-1">•</span>
-                        <span className="text-gray-700">{point}</span>
+                      <li key={idx} className="flex gap-3 group">
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
+                        <span className="text-gray-700 text-sm leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -264,33 +271,41 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Education</h2>
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Education</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
+          </div>
+
+          <Card className="hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-lg">
               <div className="flex justify-between items-start">
                 <div>
-                  <CardTitle className="text-xl text-gray-900">{education.institution}</CardTitle>
-                  <p className="text-lg text-blue-600 font-medium">{education.degree}</p>
+                  <CardTitle className="text-2xl text-gray-900 mb-2">{education.institution}</CardTitle>
+                  <p className="text-lg text-blue-600 font-semibold">{education.degree}</p>
                 </div>
                 <div className="text-right">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
+                  <div className="flex items-center gap-2 text-gray-600 mb-2 bg-white px-4 py-2 rounded-full shadow-md">
                     <Calendar className="w-4 h-4" />
-                    <span>{education.period}</span>
+                    <span className="font-medium">{education.period}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-gray-600 bg-white px-4 py-2 rounded-full shadow-md">
                     <MapPin className="w-4 h-4" />
-                    <span>{education.location}</span>
+                    <span className="font-medium">{education.location}</span>
                   </div>
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
-              <h4 className="font-semibold text-gray-900 mb-3">Key Courses</h4>
-              <div className="flex flex-wrap gap-2">
+            <CardContent className="pt-6">
+              <h4 className="font-semibold text-gray-900 mb-4 text-lg">Key Courses</h4>
+              <div className="flex flex-wrap gap-3">
                 {education.courses.map((course) => (
-                  <Badge key={course} variant="outline" className="bg-gray-50">
+                  <Badge 
+                    key={course} 
+                    variant="outline" 
+                    className="bg-gray-50 hover:bg-blue-50 hover:border-blue-300 transition-colors duration-200 hover:scale-105 px-3 py-1"
+                  >
                     {course}
                   </Badge>
                 ))}
@@ -301,10 +316,21 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-gray-900 text-white">
+      <footer className="py-12 px-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto text-center">
+          <div className="flex justify-center space-x-6 mb-6">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href="mailto:abhinav@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
           <p className="text-gray-400">
-            © 2025 Abhinav Attri. Built with passion for data science and machine learning.
+            © 2025 Abhinav Attri. Crafted with passion for data science and machine learning innovation.
           </p>
         </div>
       </footer>
