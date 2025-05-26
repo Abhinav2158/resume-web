@@ -6,7 +6,61 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Projects = () => {
-  const featuredProjects = [
+  const mainProjects = [
+    {
+      title: "Text Classification and POS Tagging System",
+      category: "Academic Project",
+      period: "September 2024 – November 2024",
+      technologies: ["Python", "Scikit-Learn", "PyTorch", "NLTK", "NumPy"],
+      description: "Developed a comprehensive feature extraction pipeline using regex patterns and n-grams for emotion classification and part-of-speech tagging.",
+      achievements: [
+        "Developed a feature extraction pipeline using regex and n-grams for emotion classification",
+        "Trained and evaluated multiple ML models (Naive Bayes, Logistic Regression, Random Forest, SVM) with Scikit-Learn",
+        "Implemented deep learning models (FFNN, RNN, LSTM) with custom Word2Vec embeddings and fine-tuned transformer models (BERT, RoBERTa) for emotion classification in PyTorch",
+        "Implemented the Viterbi algorithm with Hidden Markov Models for POS tagging, dynamically adjusting emission probabilities to improve accuracy on noisy datasets using NumPy"
+      ],
+      status: "Completed",
+      type: "academic",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    },
+    {
+      title: "Multi-Domain Recommendation System",
+      category: "Personal Project",
+      period: "May 2023 – July 2023",
+      technologies: ["Python", "Flask", "Pandas", "Scikit-Learn", "NLTK"],
+      description: "Designed and built a multi-domain recommender system across books, music, and movies by preprocessing metadata, cleaning features, and serializing ratings/tags for efficient retrieval.",
+      achievements: [
+        "Designed and built a multi-domain recommender system across books, music, and movies",
+        "Preprocessing metadata, cleaning features, and serializing ratings/tags for efficient retrieval",
+        "Implemented hybrid algorithms: popularity and collaborative filtering (cosine similarity) for books",
+        "Content-based filtering for music and movies with tag vectorization",
+        "Deployed the Flask-based book recommender, while preparing music/movie modules for deployment using pickle-serialized similarity scores and real-time metadata querying"
+      ],
+      status: "Completed",
+      type: "personal",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    },
+    {
+      title: "Real Estate Cost Prognostication",
+      category: "Machine Learning Project",
+      period: "September 2023 – November 2023",
+      technologies: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "NumPy"],
+      description: "Developed flat price prediction models using ensemble and neural networks; achieved R² = 0.71, RMSE = 35.5 via optimized feature engineering and hyperparameter tuning.",
+      achievements: [
+        "Developed flat price prediction models using ensemble and neural networks",
+        "Achieved R² = 0.71, RMSE = 35.5 via optimized feature engineering and hyperparameter tuning",
+        "Enhanced generalization by integrating categorical and numerical features through scaling, encoding, and dimensionality reduction"
+      ],
+      status: "Completed",
+      type: "ml",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    }
+  ];
+
+  const additionalProjects = [
     {
       title: "Near-Infrared to RGB Image Colorization",
       category: "Research Project",
@@ -24,22 +78,6 @@ const Projects = () => {
       demo: null
     },
     {
-      title: "Text Classification and POS Tagging System",
-      category: "Academic Project",
-      period: "September 2024 – November 2024",
-      technologies: ["Python", "Scikit-Learn", "PyTorch", "NLTK", "NumPy"],
-      description: "Developed a comprehensive feature extraction pipeline using regex patterns and n-grams for emotion classification and part-of-speech tagging.",
-      achievements: [
-        "Feature extraction pipeline using regex and n-grams",
-        "Deep learning models (FFNN, RNN, LSTM) with custom Word2Vec embeddings",
-        "Viterbi algorithm with Hidden Markov Models for POS tagging"
-      ],
-      status: "Completed",
-      type: "academic",
-      github: "https://github.com/Abhinav2158",
-      demo: null
-    },
-    {
       title: "Contrastive Boundary Learning for Point Cloud Segmentation",
       category: "Reading Project",
       period: "Research Project",
@@ -52,22 +90,6 @@ const Projects = () => {
       ],
       status: "Completed",
       type: "research",
-      github: "https://github.com/Abhinav2158",
-      demo: null
-    },
-    {
-      title: "Multi-Domain Recommendation System",
-      category: "Personal Project",
-      period: "May 2023 – July 2023",
-      technologies: ["Python", "Flask", "Pandas", "Scikit-Learn", "NLTK"],
-      description: "Developed a multi-domain recommendation system by preprocessing book, music, and movie datasets, cleaning metadata, and serializing features for efficient retrieval.",
-      achievements: [
-        "Implemented hybrid recommenders using popularity and collaborative filtering",
-        "Content-based filtering for music and movies with tag vectorization",
-        "Deployed Flask-based book recommender with pickle-serialized similarity scores"
-      ],
-      status: "Completed",
-      type: "personal",
       github: "https://github.com/Abhinav2158",
       demo: null
     },
@@ -118,22 +140,6 @@ const Projects = () => {
       type: "dl",
       github: "https://github.com/Abhinav2158",
       demo: null
-    },
-    {
-      title: "Real Estate Cost Prognostication",
-      category: "Regression Project",
-      period: "September 2023 – November 2023",
-      technologies: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "NumPy"],
-      description: "Implemented a regression model leveraging advanced machine learning algorithms such as Random Forest, Gradient Boosting, and Neural Networks to predict flat prices.",
-      achievements: [
-        "Feature engineering techniques including one-hot encoding and feature scaling",
-        "Hyperparameter tuning methods such as grid search and random search",
-        "Achieved minimized Mean Squared Error (MSE) and maximizing R-squared (R²) scores"
-      ],
-      status: "Completed",
-      type: "ml",
-      github: "https://github.com/Abhinav2158",
-      demo: null
     }
   ];
 
@@ -174,17 +180,17 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Featured Projects */}
+      {/* Main Projects */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">My Projects</h2>
+            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Comprehensive showcase of my research and development work</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Key projects from my academic and professional work</p>
           </div>
 
           <div className="space-y-8">
-            {featuredProjects.map((project, index) => {
+            {mainProjects.map((project, index) => {
               const ProjectIcon = getProjectIcon(project.type);
               return (
                 <Card key={index} className="shadow-lg border-0 overflow-hidden hover:shadow-xl transition-all">
@@ -256,6 +262,82 @@ const Projects = () => {
                       </div>
                     </div>
                   </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Projects */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Additional Projects</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Other notable projects and research work</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {additionalProjects.map((project, index) => {
+              const ProjectIcon = getProjectIcon(project.type);
+              return (
+                <Card key={index} className="shadow-lg border-0 overflow-hidden hover:shadow-xl transition-all h-full">
+                  <CardHeader className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white">
+                        <ProjectIcon className="w-6 h-6" />
+                      </div>
+                      <Badge className={getStatusColor(project.status)}>
+                        {project.status}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-lg">{project.title}</CardTitle>
+                    <p className="text-purple-600 font-medium text-sm">{project.category}</p>
+                  </CardHeader>
+                  
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span className="text-sm">{project.period}</span>
+                    </div>
+                    
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {project.technologies.slice(0, 3).map((tech, idx) => (
+                        <Badge key={idx} variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="secondary" className="bg-gray-100 text-gray-600 text-xs">
+                          +{project.technologies.length - 3} more
+                        </Badge>
+                      )}
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <Button size="sm" variant="outline" className="flex-1" asChild>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
+                      {project.demo && (
+                        <Button size="sm" className="flex-1" asChild>
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
                 </Card>
               );
             })}

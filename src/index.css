@@ -119,16 +119,16 @@
   animation-delay: 1s;
 }
 
-/* Overlapping circle animation */
+/* Scale animation for the overlapping circle */
 @keyframes scaleAnimation {
   0%, 100% {
-    transform: scale(1) translateX(80px);
+    transform: scale(1) translateX(-80px);
   }
   50% {
-    transform: scale(1.1) translateX(80px);
+    transform: scale(1.2) translateX(-80px);
   }
 }
 
 .animate-scale {
-  animation: scaleAnimation 3s ease-in-out infinite;
+  animation: scaleAnimation 4s ease-in-out infinite;
 }
