@@ -7,6 +7,22 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const mainProjects = [
+     {
+      title: "Near-Infrared to RGB Image Colorization",
+      category: "Research Project",
+      period: "January 2025 – Present",
+      technologies: ["Python", "TensorFlow", "GANs", "ColorMamba", "Computer Vision"],
+      description: "Proposed a deep learning framework for Near-Infrared (NIR) to RGB image colorization using an enhanced GAN-based architecture extending ColorMamba.",
+      achievements: [
+        "Achieved PSNR: 24.418, SSIM: 0.71 on VCIP2020 dataset",
+        "Evaluated on four public datasets demonstrating robustness",
+        "Enhanced architecture for varied lighting conditions"
+      ],
+      status: "Completed",
+      type: "research",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    },
     {
       title: "Text Classification and POS Tagging System",
       category: "Academic Project",
@@ -61,22 +77,6 @@ const Projects = () => {
   ];
 
   const additionalProjects = [
-    {
-      title: "Near-Infrared to RGB Image Colorization",
-      category: "Research Project",
-      period: "January 2025 – Present",
-      technologies: ["Python", "TensorFlow", "GANs", "ColorMamba", "Computer Vision"],
-      description: "Proposed a deep learning framework for Near-Infrared (NIR) to RGB image colorization using an enhanced GAN-based architecture extending ColorMamba.",
-      achievements: [
-        "Achieved PSNR: 24.418, SSIM: 0.71 on VCIP2020 dataset",
-        "Evaluated on four public datasets demonstrating robustness",
-        "Enhanced architecture for varied lighting conditions"
-      ],
-      status: "In Progress",
-      type: "research",
-      github: "https://github.com/Abhinav2158",
-      demo: null
-    },
     {
       title: "Contrastive Boundary Learning for Point Cloud Segmentation",
       category: "Reading Project",
