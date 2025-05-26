@@ -12,7 +12,7 @@ const Education = () => {
       institution: "Indian Institute of Science Education and Research, Bhopal",
       period: "2021 - 2025",
       location: "Bhopal, Madhya Pradesh",
-      description: "Pursuing an integrated BS-MS program in Data Science and Engineering with focus on machine learning, artificial intelligence, and computational methods.",
+      description: "Pursuing a 4 year of BS program in Data Science and Engineering with focus on machine learning, artificial intelligence, and computational methods.",
       highlights: [
         "Current Year: Graduated",
         "Focus Areas: Machine Learning, Computer Vision, Deep Learning",
