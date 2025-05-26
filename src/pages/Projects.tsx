@@ -27,12 +27,12 @@ const Projects = () => {
       title: "Text Classification and POS Tagging System",
       category: "Academic Project",
       period: "September 2024 – November 2024",
-      technologies: ["Python", "Scikit-Learn", "PyTorch", "NLTK", "NLP"],
+      technologies: ["Python", "Scikit-Learn", "PyTorch", "NLTK", "NumPy"],
       description: "Developed a comprehensive feature extraction pipeline using regex patterns and n-grams for emotion classification and part-of-speech tagging.",
       achievements: [
-        "Implemented advanced NLP preprocessing techniques",
-        "Built custom feature extraction pipeline",
-        "Achieved high accuracy in emotion classification"
+        "Feature extraction pipeline using regex and n-grams",
+        "Deep learning models (FFNN, RNN, LSTM) with custom Word2Vec embeddings",
+        "Viterbi algorithm with Hidden Markov Models for POS tagging"
       ],
       status: "Completed",
       type: "academic",
@@ -40,16 +40,31 @@ const Projects = () => {
       demo: null
     },
     {
+      title: "Contrastive Boundary Learning for Point Cloud Segmentation",
+      category: "Reading Project",
+      period: "Research Project",
+      technologies: ["Python", "Point Cloud Processing", "3D Computer Vision"],
+      description: "Analyzed limitations of 3D point cloud segmentation, focusing on scene boundary precision as a key factor in performance degradation.",
+      achievements: [
+        "Investigated Contrastive Boundary Learning (CBL) framework",
+        "Enhanced feature discrimination at boundaries using multi-scale contrastive optimization",
+        "Assessed quantitative improvements in boundary IoU and mIoU across datasets like S3DIS"
+      ],
+      status: "Completed",
+      type: "research",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    },
+    {
       title: "Multi-Domain Recommendation System",
       category: "Personal Project",
       period: "May 2023 – July 2023",
-      technologies: ["Python", "Pandas", "Scikit-Learn", "NLTK", "LangChain", "FastAPI"],
-      description: "Built a comprehensive recommender system across books, music, and movies using hybrid algorithms combining collaborative and content-based filtering with LangChain integration.",
+      technologies: ["Python", "Flask", "Pandas", "Scikit-Learn", "NLTK"],
+      description: "Developed a multi-domain recommendation system by preprocessing book, music, and movie datasets, cleaning metadata, and serializing features for efficient retrieval.",
       achievements: [
-        "Implemented hybrid recommendation algorithms",
-        "Cross-domain recommendation capabilities",
-        "Scalable FastAPI backend architecture",
-        "LangChain integration for enhanced recommendations"
+        "Implemented hybrid recommenders using popularity and collaborative filtering",
+        "Content-based filtering for music and movies with tag vectorization",
+        "Deployed Flask-based book recommender with pickle-serialized similarity scores"
       ],
       status: "Completed",
       type: "personal",
@@ -57,15 +72,15 @@ const Projects = () => {
       demo: null
     },
     {
-      title: "Real Estate Cost Prognostication",
+      title: "Text Classification System for Spam and Toxicity Detection",
       category: "Data Science Project",
-      period: "September 2023 – November 2023",
-      technologies: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "Regression"],
-      description: "Developed machine learning models for flat price prediction using advanced regression techniques and feature engineering.",
+      period: "Data Analysis Project",
+      technologies: ["Python", "Pandas", "Scikit-Learn", "NLTK", "Streamlit"],
+      description: "Designed a unified text preprocessing pipeline using NLTK for cleaning and transforming SMS and tweet datasets, including duplicate removal and label encoding.",
       achievements: [
-        "Achieved R² = 0.71, RMSE = 35.5",
-        "Comprehensive feature engineering",
-        "Multiple regression model comparison"
+        "Exploratory data analysis on SMS spam and tweet toxicity datasets",
+        "TF-IDF vectorizers with Naive Bayes, Logistic Regression, and XGBoost models",
+        "Deployed via Streamlit web application for real-time prediction"
       ],
       status: "Completed",
       type: "data-science",
@@ -73,81 +88,52 @@ const Projects = () => {
       demo: null
     },
     {
-      title: "Intelligent Chat Application with RAG",
-      category: "AI Project",
-      period: "August 2024 – October 2024",
-      technologies: ["Python", "LangChain", "FastAPI", "ChromaDB", "OpenAI"],
-      description: "Built an intelligent chat application using Retrieval-Augmented Generation (RAG) architecture with LangChain and FastAPI backend.",
-      achievements: [
-        "Implemented RAG pipeline for accurate responses",
-        "FastAPI backend with real-time chat capabilities",
-        "Vector database integration with ChromaDB",
-        "Contextual document retrieval system"
-      ],
-      status: "Completed",
-      type: "ai",
-      github: "https://github.com/Abhinav2158",
-      demo: null
-    },
-    {
-      title: "Automated Stock Price Prediction System",
-      category: "Financial ML Project",
-      period: "June 2024 – August 2024",
-      technologies: ["Python", "LSTM", "TensorFlow", "FastAPI", "Streamlit"],
-      description: "Developed an automated stock price prediction system using LSTM neural networks with real-time data processing and FastAPI backend.",
-      achievements: [
-        "LSTM model with 85% accuracy on test data",
-        "Real-time data fetching and processing",
-        "FastAPI backend for model serving",
-        "Interactive Streamlit dashboard"
-      ],
-      status: "Completed",
-      type: "financial",
-      github: "https://github.com/Abhinav2158",
-      demo: null
-    }
-  ];
-
-  const additionalProjects = [
-    {
-      title: "Book Recommender System",
-      technologies: ["Python", "Pandas", "Scikit-Learn", "Collaborative Filtering"],
-      description: "Collaborative filtering based book recommendation system with user preference analysis"
-    },
-    {
       title: "Mobile Price Forecasting",
-      technologies: ["Python", "Machine Learning", "Regression", "Feature Engineering"],
-      description: "Predicting mobile phone prices using comprehensive feature analysis and ML models"
+      category: "Machine Learning Project",
+      period: "Academic Project",
+      technologies: ["Python", "Scikit-Learn", "Matplotlib", "NumPy", "Pandas"],
+      description: "Developed a comprehensive pipeline for training classifiers, including AdaBoost, Decision Tree, SVM, etc. Employed grid search for hyperparameter optimization.",
+      achievements: [
+        "Robust model evaluation framework using stratified K-fold cross-validation",
+        "Minimum of 5 folds for accurate performance assessment",
+        "Visualized classification results via heatmap of confusion matrix"
+      ],
+      status: "Completed",
+      type: "ml",
+      github: "https://github.com/Abhinav2158",
+      demo: null
     },
     {
-      title: "Hand-written Digit Recognition",
-      technologies: ["Python", "CNN", "TensorFlow", "Computer Vision"],
-      description: "Deep learning model for MNIST digit classification with 99% accuracy"
+      title: "HandWritten Digit Recognition",
+      category: "Deep Learning Project",
+      period: "Academic Project",
+      technologies: ["CNN", "TensorFlow", "Python", "Pandas"],
+      description: "Implementing a Convolutional Neural Network architecture for image recognition tailored specifically for handwritten digits.",
+      achievements: [
+        "Achieved accuracy of 98% with CNN and 95% with ANN",
+        "Trained on diverse dataset of handwritten digits",
+        "Image segmentation techniques for preprocessing input images"
+      ],
+      status: "Completed",
+      type: "dl",
+      github: "https://github.com/Abhinav2158",
+      demo: null
     },
     {
-      title: "Movie Recommendation System",
-      technologies: ["Python", "Collaborative Filtering", "Matrix Factorization", "NLP"],
-      description: "Advanced movie recommendation using user preferences and content-based filtering"
-    },
-    {
-      title: "Sentiment Analysis Tool",
-      technologies: ["Python", "NLTK", "Transformers", "FastAPI"],
-      description: "Real-time sentiment analysis tool with FastAPI backend and transformer models"
-    },
-    {
-      title: "Image Classification API",
-      technologies: ["Python", "FastAPI", "TensorFlow", "Docker"],
-      description: "Scalable image classification API with Docker containerization"
-    },
-    {
-      title: "Data Pipeline Automation",
-      technologies: ["Python", "Apache Airflow", "PostgreSQL", "Docker"],
-      description: "Automated ETL pipeline for large-scale data processing and analytics"
-    },
-    {
-      title: "LangChain Document QA System",
-      technologies: ["Python", "LangChain", "ChromaDB", "Streamlit"],
-      description: "Question-answering system for documents using LangChain and vector databases"
+      title: "Real Estate Cost Prognostication",
+      category: "Regression Project",
+      period: "September 2023 – November 2023",
+      technologies: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "NumPy"],
+      description: "Implemented a regression model leveraging advanced machine learning algorithms such as Random Forest, Gradient Boosting, and Neural Networks to predict flat prices.",
+      achievements: [
+        "Feature engineering techniques including one-hot encoding and feature scaling",
+        "Hyperparameter tuning methods such as grid search and random search",
+        "Achieved minimized Mean Squared Error (MSE) and maximizing R-squared (R²) scores"
+      ],
+      status: "Completed",
+      type: "ml",
+      github: "https://github.com/Abhinav2158",
+      demo: null
     }
   ];
 
@@ -156,8 +142,8 @@ const Projects = () => {
       case 'research': return Brain;
       case 'academic': return Code;
       case 'data-science': return Database;
-      case 'ai': return Brain;
-      case 'financial': return Database;
+      case 'ml': return Database;
+      case 'dl': return Brain;
       default: return FolderOpen;
     }
   };
@@ -192,9 +178,9 @@ const Projects = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+            <h2 className="text-4xl font-bold mb-4">My Projects</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Detailed showcase of my major works</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Comprehensive showcase of my research and development work</p>
           </div>
 
           <div className="space-y-8">
@@ -273,44 +259,6 @@ const Projects = () => {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Projects */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Additional Projects</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Other notable works and implementations</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {additionalProjects.map((project, index) => (
-              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all hover:-translate-y-2 h-full">
-                <CardHeader>
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white">
-                      <Code className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <CardTitle className="text-lg text-center">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 text-center">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1 justify-center">
-                    {project.technologies.map((tech, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

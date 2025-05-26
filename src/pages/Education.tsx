@@ -30,18 +30,6 @@ const Education = () => {
         "Main Subjects: Physics, Chemistry, Mathematics",
         "Strong foundation in science and mathematics"
       ]
-    },
-    {
-      degree: "Secondary Education (10th Grade)",
-      institution: "BD DAV Public School",
-      period: "2017 - 2019",
-      location: "Dharamshala, Himachal Pradesh",
-      description: "Completed secondary education under CBSE board with excellent performance in science and mathematics.",
-      highlights: [
-        "Board: Central Board of Secondary Education (CBSE)",
-        "Excellent performance in Mathematics and Science",
-        "Active participation in academic competitions"
-      ]
     }
   ];
 
@@ -91,23 +79,23 @@ const Education = () => {
   const skills = [
     {
       category: "Programming Languages",
-      skills: ["Python", "SQL", "MATLAB", "Mathematica", "HTML", "CSS"]
+      skills: ["Python", "C", "SQL", "HTML", "CSS", "Mathematica", "JavaScript", "MATLAB"]
     },
     {
-      category: "Machine Learning & AI",
-      skills: ["Scikit-Learn", "TensorFlow", "PyTorch", "OpenCV", "NLTK", "Transformers"]
+      category: "Software and Tools",
+      skills: ["LaTeX", "Excel", "GitHub", "Google Colab", "Jupyter", "VS Code", "PyCharm", "Linux"]
     },
     {
-      category: "Modern AI Frameworks",
-      skills: ["LangChain", "ChromaDB", "Hugging Face", "RAG Systems", "Vector Databases"]
+      category: "Python Libraries & Frameworks",
+      skills: ["TensorFlow", "PyTorch", "NumPy", "Pandas", "SciPy", "Matplotlib", "Flask", "Streamlit"]
     },
     {
-      category: "Web Development & APIs",
-      skills: ["FastAPI", "Streamlit", "Flask", "RESTful APIs", "Docker", "Git"]
+      category: "Mathematics for DL and ML",
+      skills: ["Linear Algebra", "Probability", "Statistics", "Calculus and Optimization"]
     },
     {
-      category: "Data Science Tools",
-      skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter", "Apache Airflow"]
+      category: "Data Science, ML, DL",
+      skills: ["Data Visualization", "Supervised/Unsupervised Learning", "ANN", "CNN", "RNN-LSTM", "GANs", "Transformers", "Feature Engineering"]
     }
   ];
 

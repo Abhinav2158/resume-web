@@ -166,6 +166,13 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Second overlapping animated circle */}
+            <div className="absolute z-5 w-80 h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl opacity-50 transform translate-x-20">
+              <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-6xl font-bold animate-pulse">
+                <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-[pulse_2s_ease-in-out_infinite]"></div>
+              </div>
+            </div>
+
             {/* Floating Achievement Cards */}
             <div className="absolute -left-8 top-1/4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg animate-float">
               <div className="flex items-center space-x-3">

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +99,36 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Overlapping circle animation */
+@keyframes scaleAnimation {
+  0%, 100% {
+    transform: scale(1) translateX(80px);
+  }
+  50% {
+    transform: scale(1.1) translateX(80px);
+  }
+}
+
+.animate-scale {
+  animation: scaleAnimation 3s ease-in-out infinite;
 }
