@@ -358,7 +358,7 @@ const Projects = () => {
                 Start a Project
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 w-full sm:w-auto" asChild>
+            <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-purple-600 w-full sm:w-auto" asChild>
               <a href="https://github.com/Abhinav2158" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 View All Code
