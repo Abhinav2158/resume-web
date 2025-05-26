@@ -109,7 +109,7 @@ const Education = () => {
       icon: BookOpen
     },
     {
-      title: "Tests Quaified",
+      title: "Tests Qualified",
       description: "GATE, IAT, JEE, JEE Advanced, CUET, ICAR, NEST",
       date: "2019-2025",
       icon: GraduationCap
