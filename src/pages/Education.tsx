@@ -25,11 +25,7 @@ const Education = () => {
       period: "2019 - 2021",
       location: "Dharamshala, Himachal Pradesh",
       description: "Completed higher secondary education under CBSE board with Physics, Chemistry, and Mathematics as main subjects.",
-      highlights: [
-        "Board: Central Board of Secondary Education (CBSE)",
-        "Main Subjects: Physics, Chemistry, Mathematics",
-        "Strong foundation in science and mathematics"
-      ]
+      
     }
   ];
 
@@ -109,13 +105,13 @@ const Education = () => {
     {
       title: "Academic Excellence",
       description: "Consistent performance in core data science subjects",
-      date: "2022-2025",
+      date: "2021-2025",
       icon: BookOpen
     },
     {
-      title: "CBSE Excellence",
-      description: "Strong performance in Physics, Chemistry, and Mathematics",
-      date: "2019-2021",
+      title: "Tests Quaified",
+      description: "GATE, IAT, JEE, JEE Advanced, CUET, ICAR, NEST",
+      date: "2019-2025",
       icon: GraduationCap
     }
   ];
@@ -303,7 +299,7 @@ const Education = () => {
               </Button>
             </Link>
             <Link to="/projects">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-blue-600 w-full sm:w-auto">
                 View My Projects
               </Button>
             </Link>
