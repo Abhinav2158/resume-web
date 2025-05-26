@@ -16,7 +16,31 @@ const Education = () => {
       highlights: [
         "Current Year: Graduated",
         "Focus Areas: Machine Learning, Computer Vision, Deep Learning",
-        "Research Experience in ASIP Lab , DSE Department"
+        "Research Experience in ASIP Lab, DSE Department"
+      ]
+    },
+    {
+      degree: "Higher Secondary Education (12th Grade)",
+      institution: "BD DAV Public School",
+      period: "2019 - 2021",
+      location: "Dharamshala, Himachal Pradesh",
+      description: "Completed higher secondary education under CBSE board with Physics, Chemistry, and Mathematics as main subjects.",
+      highlights: [
+        "Board: Central Board of Secondary Education (CBSE)",
+        "Main Subjects: Physics, Chemistry, Mathematics",
+        "Strong foundation in science and mathematics"
+      ]
+    },
+    {
+      degree: "Secondary Education (10th Grade)",
+      institution: "BD DAV Public School",
+      period: "2017 - 2019",
+      location: "Dharamshala, Himachal Pradesh",
+      description: "Completed secondary education under CBSE board with excellent performance in science and mathematics.",
+      highlights: [
+        "Board: Central Board of Secondary Education (CBSE)",
+        "Excellent performance in Mathematics and Science",
+        "Active participation in academic competitions"
       ]
     }
   ];
@@ -43,7 +67,7 @@ const Education = () => {
       ]
     },
     {
-      category: "Advanced Topics",
+      category: "Advanced AI & ML",
       subjects: [
         "Deep Learning",
         "Computer Vision",
@@ -51,6 +75,39 @@ const Education = () => {
         "Neural Networks",
         "GANs and Transformers"
       ]
+    },
+    {
+      category: "Modern Development",
+      subjects: [
+        "LangChain Framework",
+        "FastAPI Development",
+        "Docker & Containerization",
+        "RESTful API Design",
+        "Vector Databases"
+      ]
+    }
+  ];
+
+  const skills = [
+    {
+      category: "Programming Languages",
+      skills: ["Python", "SQL", "MATLAB", "Mathematica", "HTML", "CSS"]
+    },
+    {
+      category: "Machine Learning & AI",
+      skills: ["Scikit-Learn", "TensorFlow", "PyTorch", "OpenCV", "NLTK", "Transformers"]
+    },
+    {
+      category: "Modern AI Frameworks",
+      skills: ["LangChain", "ChromaDB", "Hugging Face", "RAG Systems", "Vector Databases"]
+    },
+    {
+      category: "Web Development & APIs",
+      skills: ["FastAPI", "Streamlit", "Flask", "RESTful APIs", "Docker", "Git"]
+    },
+    {
+      category: "Data Science Tools",
+      skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter", "Apache Airflow"]
     }
   ];
 
@@ -66,6 +123,12 @@ const Education = () => {
       description: "Consistent performance in core data science subjects",
       date: "2022-2025",
       icon: BookOpen
+    },
+    {
+      title: "CBSE Excellence",
+      description: "Strong performance in Physics, Chemistry, and Mathematics",
+      date: "2019-2021",
+      icon: GraduationCap
     }
   ];
 
@@ -146,29 +209,61 @@ const Education = () => {
         </div>
       </section>
 
-      {/* Coursework */}
+      {/* Skills Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Technologies and tools I work with</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {skills.map((skillGroup, index) => (
+              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg text-center text-blue-600">
+                    {skillGroup.category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {skillGroup.skills.map((skill, idx) => (
+                      <Badge key={idx} variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coursework */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Relevant Coursework</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Key subjects and skills acquired</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Key subjects and areas of study</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {courses.map((course, index) => (
-              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-shadow h-full">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center text-blue-600">
+                  <CardTitle className="text-lg text-center text-blue-600">
                     {course.category}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {course.subjects.map((subject, idx) => (
                       <div key={idx} className="flex items-center">
                         <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3"></div>
-                        <span className="text-gray-600 dark:text-gray-400">{subject}</span>
+                        <span className="text-gray-600 dark:text-gray-400 text-sm">{subject}</span>
                       </div>
                     ))}
                   </div>
@@ -180,27 +275,25 @@ const Education = () => {
       </section>
 
       {/* Achievements */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Academic Achievements</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {achievements.map((achievement, index) => (
               <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all hover:-translate-y-2">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
+                <CardContent className="p-6 text-center">
+                  <div className="flex justify-center mb-4">
                     <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white">
                       <achievement.icon className="w-6 h-6" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{achievement.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-2">{achievement.description}</p>
-                      <Badge variant="secondary">{achievement.date}</Badge>
-                    </div>
                   </div>
+                  <h3 className="text-xl font-semibold mb-2">{achievement.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-2">{achievement.description}</p>
+                  <Badge variant="secondary">{achievement.date}</Badge>
                 </CardContent>
               </Card>
             ))}

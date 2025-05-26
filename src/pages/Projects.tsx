@@ -43,12 +43,13 @@ const Projects = () => {
       title: "Multi-Domain Recommendation System",
       category: "Personal Project",
       period: "May 2023 – July 2023",
-      technologies: ["Python", "Pandas", "Scikit-Learn", "NLTK", "Recommendation Systems"],
-      description: "Built a comprehensive recommender system across books, music, and movies using hybrid algorithms combining collaborative and content-based filtering.",
+      technologies: ["Python", "Pandas", "Scikit-Learn", "NLTK", "LangChain", "FastAPI"],
+      description: "Built a comprehensive recommender system across books, music, and movies using hybrid algorithms combining collaborative and content-based filtering with LangChain integration.",
       achievements: [
         "Implemented hybrid recommendation algorithms",
         "Cross-domain recommendation capabilities",
-        "Scalable architecture for multiple domains"
+        "Scalable FastAPI backend architecture",
+        "LangChain integration for enhanced recommendations"
       ],
       status: "Completed",
       type: "personal",
@@ -70,29 +71,83 @@ const Projects = () => {
       type: "data-science",
       github: "https://github.com/Abhinav2158",
       demo: null
+    },
+    {
+      title: "Intelligent Chat Application with RAG",
+      category: "AI Project",
+      period: "August 2024 – October 2024",
+      technologies: ["Python", "LangChain", "FastAPI", "ChromaDB", "OpenAI"],
+      description: "Built an intelligent chat application using Retrieval-Augmented Generation (RAG) architecture with LangChain and FastAPI backend.",
+      achievements: [
+        "Implemented RAG pipeline for accurate responses",
+        "FastAPI backend with real-time chat capabilities",
+        "Vector database integration with ChromaDB",
+        "Contextual document retrieval system"
+      ],
+      status: "Completed",
+      type: "ai",
+      github: "https://github.com/Abhinav2158",
+      demo: null
+    },
+    {
+      title: "Automated Stock Price Prediction System",
+      category: "Financial ML Project",
+      period: "June 2024 – August 2024",
+      technologies: ["Python", "LSTM", "TensorFlow", "FastAPI", "Streamlit"],
+      description: "Developed an automated stock price prediction system using LSTM neural networks with real-time data processing and FastAPI backend.",
+      achievements: [
+        "LSTM model with 85% accuracy on test data",
+        "Real-time data fetching and processing",
+        "FastAPI backend for model serving",
+        "Interactive Streamlit dashboard"
+      ],
+      status: "Completed",
+      type: "financial",
+      github: "https://github.com/Abhinav2158",
+      demo: null
     }
   ];
 
   const additionalProjects = [
     {
       title: "Book Recommender System",
-      technologies: ["Python", "Pandas", "Scikit-Learn"],
-      description: "Collaborative filtering based book recommendation system"
+      technologies: ["Python", "Pandas", "Scikit-Learn", "Collaborative Filtering"],
+      description: "Collaborative filtering based book recommendation system with user preference analysis"
     },
     {
       title: "Mobile Price Forecasting",
-      technologies: ["Python", "Machine Learning", "Regression"],
-      description: "Predicting mobile phone prices using feature analysis"
+      technologies: ["Python", "Machine Learning", "Regression", "Feature Engineering"],
+      description: "Predicting mobile phone prices using comprehensive feature analysis and ML models"
     },
     {
       title: "Hand-written Digit Recognition",
-      technologies: ["Python", "CNN", "TensorFlow"],
-      description: "Deep learning model for MNIST digit classification"
+      technologies: ["Python", "CNN", "TensorFlow", "Computer Vision"],
+      description: "Deep learning model for MNIST digit classification with 99% accuracy"
     },
     {
       title: "Movie Recommendation System",
-      technologies: ["Python", "Collaborative Filtering", "Matrix Factorization"],
-      description: "Advanced movie recommendation using user preferences"
+      technologies: ["Python", "Collaborative Filtering", "Matrix Factorization", "NLP"],
+      description: "Advanced movie recommendation using user preferences and content-based filtering"
+    },
+    {
+      title: "Sentiment Analysis Tool",
+      technologies: ["Python", "NLTK", "Transformers", "FastAPI"],
+      description: "Real-time sentiment analysis tool with FastAPI backend and transformer models"
+    },
+    {
+      title: "Image Classification API",
+      technologies: ["Python", "FastAPI", "TensorFlow", "Docker"],
+      description: "Scalable image classification API with Docker containerization"
+    },
+    {
+      title: "Data Pipeline Automation",
+      technologies: ["Python", "Apache Airflow", "PostgreSQL", "Docker"],
+      description: "Automated ETL pipeline for large-scale data processing and analytics"
+    },
+    {
+      title: "LangChain Document QA System",
+      technologies: ["Python", "LangChain", "ChromaDB", "Streamlit"],
+      description: "Question-answering system for documents using LangChain and vector databases"
     }
   ];
 
@@ -101,6 +156,8 @@ const Projects = () => {
       case 'research': return Brain;
       case 'academic': return Code;
       case 'data-science': return Database;
+      case 'ai': return Brain;
+      case 'financial': return Database;
       default: return FolderOpen;
     }
   };
@@ -229,9 +286,9 @@ const Projects = () => {
             <p className="text-xl text-gray-600 dark:text-gray-400">Other notable works and implementations</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {additionalProjects.map((project, index) => (
-              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all hover:-translate-y-2">
+              <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all hover:-translate-y-2 h-full">
                 <CardHeader>
                   <div className="flex items-center justify-center mb-4">
                     <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white">
