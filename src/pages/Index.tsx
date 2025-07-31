@@ -17,6 +17,16 @@ const Index = () => {
     "AI Engineer"
   ];
 
+  // Initialize theme from localStorage and system preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+    
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
@@ -25,8 +35,10 @@ const Index = () => {
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    document.documentElement.classList.toggle('dark', newIsDark);
+    localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
   };
 
   const quickStats = [
