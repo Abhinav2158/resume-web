@@ -102,6 +102,17 @@ const Index = () => {
               <Link to="/education" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Education</Link>
               <Link to="/projects" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Projects</Link>
               <Link to="/contact" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600">Contact</Link>
+              <div className="pt-4 border-t border-gray-200/20">
+                <button 
+                  onClick={toggleTheme} 
+                  className="flex items-center space-x-2 w-full p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                >
+                  {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {isDark ? 'Light Mode' : 'Dark Mode'}
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         )}
