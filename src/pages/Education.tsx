@@ -36,7 +36,6 @@ const Education = () => {
       period: "2019 - 2021",
       location: "Dharamshala, Himachal Pradesh",
       description: "Completed higher secondary education under CBSE board with Physics, Chemistry, and Mathematics as main subjects.",
-      highlights: []
     }
   ];
 
@@ -77,8 +76,7 @@ const Education = () => {
         "LangChain Framework",
         "FastAPI Development",
         "Docker & Containerization",
-        "RESTful API Design",
-        "Vector Databases"
+                "Vector Databases"
       ]
     }
   ];
