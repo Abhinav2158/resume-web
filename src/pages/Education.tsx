@@ -7,6 +7,17 @@ import { Link } from 'react-router-dom';
 
 const Education = () => {
   const education = [
+       {
+      degree: "MTech, AI for Sustainability",
+      institution: "Indian Institute of Technology Kanpur",
+      period: "2025 - Present",
+      location: "Kanpur, Uttar Pradesh",
+      description: "M.Tech student in AI for Sustainability at IIT Kanpur, focused on applying advanced AI to solve critical environmental and societal challenges. Committed to creating innovative, impactful, and sustainable solutions.",
+      highlights: [
+        "Current Year: First year",
+        "Focus Areas: Specializing in AI-driven solutions for sustainability, environmental protection, and societal impact.",
+      ]
+    },
     {
       degree: "BS, Data Science and Engineering",
       institution: "Indian Institute of Science Education and Research, Bhopal",
